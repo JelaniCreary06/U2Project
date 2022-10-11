@@ -1,0 +1,52 @@
+Runner
+    (double) Variables: x1, y1, x2, y2
+
+        Greet the user upon code startup, and ask for 2 separate coordinate inputs.
+        The Scanner class should be used to assign the appropriate coordinate points to variables.
+
+        Using the substring method, check if each input is a valid coordinate, loop the code until it's valid.
+        With valid inputs, use the substring method to assign the coordinates to the appropriate x and y variable.
+        (Convert from String to double, coordinates can have decimals)
+
+        Create a LinearEquation object with the variables.
+
+        Run the each method, and then call toString to see the data.
+
+LinearEquation
+    (double) Class Variables: x1, y1, x2, y2
+
+    Import DecimalFormat with layout "0.00" to round all numbers to the nearest 100th
+
+    Methods:
+
+        (constructor) LinearEquation(x1, y1, x2, y2):
+            The constructor will assign the corresponding variables to each other, to then use in other methods.
+
+        (double) distance():
+            This will calculate the distance between the points, and return the double of the distance.
+
+
+        (String) distanceToString(String demicalOrFraction):
+            Returns the actual formula for distance as a String, with the variables filled in.
+            Either decimals or fractions should be printed based on what the user inputs.
+
+
+        (double) slope:
+            This will calculate the slope of the two points, and return the double of the slope.
+
+
+        (String) slopeToString(String demicalOrFraction):
+            Returns the actual formula for slope as a String, with variables filled in.
+            Either decimals or fractions should be printed based on what the user inputs.
+
+        (double) yIntercept:
+            This will return the y-intercept of the two points as a double.
+
+        (String) yInterceptToString(String demicalOrFraction):
+            Returns the actual formula for y-intercept, with variables filed in.
+            Either decimals or fractions should be printed based on what the user inputs.
+
+
+        (String) toString(String demicalOrFraction):
+            This method will combine all of the main method data types, into one String which is returned.
+            Return the inputed coordinates as part of the String as well.
