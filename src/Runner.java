@@ -21,23 +21,20 @@ public class Runner {
 
         LinearEquation operator = new LinearEquation(x1, y1, x2, y2);
 
-        System.out.println(operator.distanceRounded());
-        System.out.println(operator.slopeRounded());
+        System.out.println(operator.toString());
     }
 
     public static double coordinateOne(String coordinate) {
         int c = coordinate.indexOf(",");
         String number = coordinate.substring(1, c);
 
-        double convertedNumber = Integer.parseInt(number);
-        return convertedNumber;
+        return Double.parseDouble(number);
     }
 
     public static double coordinateTwo(String coordinate) {
         int c = coordinate.indexOf(",");
         String number = coordinate.substring(c + 1, coordinate.length() - 1);
 
-        double convertedNumber = Integer.parseInt(number);
-        return convertedNumber;
+        return Double.parseDouble(number);
     }
 }
