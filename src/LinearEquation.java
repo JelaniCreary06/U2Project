@@ -142,6 +142,10 @@ public class LinearEquation {
     public String yInterceptToString() {
         return yInterceptToString(false, 1);
     }
+
+    public double getYCoordinate(double xInput) {
+        return (slope() * xInput) + yIntercept(true);
+    }
     public String toString(boolean outputEquations, boolean areValuesRounded, boolean fractionsForDecimals) {
 
         String toRetun = "Coordinates: (" + this.x1 + " , " + this.x2 + ") ( " + this.x2 + " , " + this.y2 +")\n" +
@@ -152,9 +156,9 @@ public class LinearEquation {
                     "\nY-Intercept: " + yInterceptToString(fractionsForDecimals, areValuesRounded, 1) +
                     "\nDistance: " + distanceToString(fractionsForDecimals);
         } else {
-            toRetun +=  "\nSlope: " + slope(areValuesRounded) +
-                    "\nY-Intercept: " + yIntercept(areValuesRounded) +
-                    "\nDistance: " + distance(areValuesRounded);
+            toRetun +=  "\nSlope: " + df.format(slope(areValuesRounded)) +
+                    "\nY-Intercept: " + df.format(yIntercept(areValuesRounded)) +
+                    "\nDistance: " + df.format(distance(areValuesRounded));
         }
 
         return toRetun;
@@ -169,9 +173,9 @@ public class LinearEquation {
                     "\nY-Intercept: " + yInterceptToString(false, areValuesRounded, 1) +
                     "\nDistance: " + distanceToString(false);
         } else {
-            toRetun +=  "\nSlope: " + slope(areValuesRounded) +
-                    "\nY-Intercept: " + yIntercept(areValuesRounded) +
-                    "\nDistance: " + distance(areValuesRounded);
+            toRetun +=  "\nSlope: " + df.format(slope(areValuesRounded)) +
+                    "\nY-Intercept: " + df.format(yIntercept(areValuesRounded)) +
+                    "\nDistance: " + df.format(distance(areValuesRounded));
         }
 
         return toRetun;
@@ -179,12 +183,13 @@ public class LinearEquation {
     public String toString( boolean areValuesRounded) {
         return "Coordinates: (" + this.x1 + " , " + this.x2 + ") ( " + this.x2 + " , " + this.y2 +")\n" +
                 "Expression: " +yInterceptToString(false) +
-                "\nSlope: " + slope(areValuesRounded) +
-                "\nY-Intercept: " + yIntercept(areValuesRounded) +
-                "\nDistance: " + distance(areValuesRounded);
+                "\nSlope: " + df.format(slope(areValuesRounded)) +
+                "\nY-Intercept: " + df.format(yIntercept(areValuesRounded)) +
+                "\nDistance: " + df.format(distance(areValuesRounded));
     }
     public String toString() {
         return toString(true);
     }
 }
+
 

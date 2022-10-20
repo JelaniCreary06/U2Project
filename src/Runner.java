@@ -1,9 +1,11 @@
 import javax.sound.sampled.Line;
+import java.text.DecimalFormat;
 import java.util.Scanner;
 public class Runner {
     public static void main(String[] args) {
 
         Scanner input = new Scanner(System.in);
+        DecimalFormat df = new DecimalFormat("0.00");
 
         double x1, y1, x2, y2;
         String cOne, cTwo;
@@ -21,7 +23,10 @@ public class Runner {
 
         LinearEquation operator = new LinearEquation(x1, y1, x2, y2);
 
-        System.out.println(operator.toString());
+        System.out.println(operator.toString() );
+
+        System.out.print("\nEnter an x value, i'll output the corresponding y value.\nOnly ONE number.\nInput here: ");
+        System.out.println("Y Coordinate: " + df.format(operator.getYCoordinate(input.nextDouble())));
     }
 
     public static double coordinateOne(String coordinate) {
