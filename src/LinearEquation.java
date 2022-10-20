@@ -101,11 +101,11 @@ public class LinearEquation {
         String equation1 = "b = ", equation2 = "b = ";
 
         if (fractionForm) {
-            equation1 +=  cf.dTF(this.y1) + " - (" + cf.dTF(slope(roundedValues)) + " * " + cf.dTF(this.x1) + ")";
-            equation2 += cf.dTF(this.y2) + " - (" + cf.dTF(slope(roundedValues)) + " * " + cf.dTF(this.x2) + ")";
+            equation1 += cf.dTF(this.y1) + " = " + cf.dTF(slope(roundedValues)) + "(" + cf.dTF(this.x1) + ") +" + cf.dTF(yIntercept(roundedValues, 1));
+            equation2 += cf.dTF(this.y2) + " = " + cf.dTF(slope(roundedValues)) + "(" + cf.dTF(this.x2) + ") +" + cf.dTF(yIntercept(roundedValues, 1));
         } else {
-            equation1 = this.y1 + " - (" + slope(roundedValues) + " * " + this.x1 + ")";
-            equation2 = this.y2 + " - (" + slope(roundedValues) + " * " + this.x2 + ")";
+            equation1 =  this.y1 + " = " + slope(roundedValues) + "(" + this.x1 + ") +" + yIntercept(roundedValues, 1);
+            equation2 =  this.y2 + " = " + slope(roundedValues) + "(" + this.x2 + ") +" + yIntercept(roundedValues, 1);
         }
 
         return switch (coordinateOneOrTwo) {
@@ -120,12 +120,14 @@ public class LinearEquation {
         String equation1 = "", equation2 = "";
 
         if (fractionForm) {
-            equation1 +=  cf.dTF(this.y1) + " - (" + cf.dTF(slope(true)) + " * " + cf.dTF(this.x1) + ")";
-            equation2 += cf.dTF(this.y2) + " - (" + cf.dTF(slope(true)) + " * " + cf.dTF(this.x2) + ")";
+            equation1 += cf.dTF(this.y1) + " = " + cf.dTF(slope(true)) + "(" + cf.dTF(this.x1) + ") +" + cf.dTF(yIntercept(true, 1));
+            equation2 += cf.dTF(this.y2) + " = " + cf.dTF(slope(true)) + "(" + cf.dTF(this.x2) + ") +" + cf.dTF(yIntercept(true, 1));
         } else {
-            equation1 = this.y1 + " - (" + slope(true) + " * " + this.x1 + ")";
-            equation2 = this.y2 + " - (" + slope(true) + " * " + this.x2 + ")";
+            equation1 =  this.y1 + " = " + slope(true) + "(" + this.x1 + ") +" + yIntercept(true, 1);
+            equation2 =  this.y2 + " = " + slope(true) + "(" + this.x2 + ") +" + yIntercept(true, 1);
         }
+
+
 
         return switch (coordinateOneOrTwo) {
             case 1 -> equation1;
@@ -181,7 +183,7 @@ public class LinearEquation {
         return toRetun;
     }
     public String toString( boolean areValuesRounded) {
-        return "Coordinates: (" + this.x1 + " , " + this.x2 + ") ( " + this.x2 + " , " + this.y2 +")\n" +
+        return "Coordinates: (" + this.x1 + " ," + this.x2 + ") ( " + this.x2 + "," + this.y2 +")\n" +
                 "Expression: " +yInterceptToString(false) +
                 "\nSlope: " + df.format(slope(areValuesRounded)) +
                 "\nY-Intercept: " + df.format(yIntercept(areValuesRounded)) +
